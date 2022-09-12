@@ -13,10 +13,11 @@
       <td>{{ pokemon.name }}</td>
       <td>{{ pokemon.url }}</td>
       <td>{{ pokemon.url.slice(34)}}</td>
-      <td>{{pokemon.url.slice(34, pokemon.url.lastIndexOf("_"))}}</td>
+      <td>{{pokemon.url.slice(34, pokemon.url.lastIndexOf("/"))}}</td>
 
       <td>
-        <a [routerLink]="['pokemon/', pokemon.url.slice(34)]" class="btn btn-info">Details</a>
+        <a [routerLink]="['pokemon/',${pokemon.url.slice(34, pokemon.url.lastIndexOf(" /"))} ]"
+          class="btn btn-info">Details</a>
         <a href="#" routerLink="pokemon/:pokemon.url.slice(34)" class="btn btn-primary">Edit</a>
         <a routerLink="" routerLinkActive="active">Home</a>
         <a routerLink="post/:pokemonId/stats">About</a>
