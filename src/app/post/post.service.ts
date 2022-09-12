@@ -11,7 +11,7 @@ import { Pokemon } from './pokemon_model';
 })
 export class PostService {
 
-  private apiURL = "https://pokeapi.co/api/v2/pokemon/";
+  private apiURL = "https://pokeapi.co/api/v2/";
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -22,13 +22,24 @@ export class PostService {
   constructor(private httpClient: HttpClient) { }
 
   getAll(): Observable<Pokemon[]> {
-    return this.httpClient.get<Pokemon[]>(this.apiURL + '?offset=0&limit=600')
+    return this.httpClient.get<Pokemon[]>(this.apiURL + 'pokemon/?offset=0&limit=898')
+      .pipe(
+        catchError(this.errorHandler)
+      )
+  }
+  getPokemonDetails(): Observable<Pokemon[]> {
+    return this.httpClient.get<Pokemon[]>(this.apiURL + 'pokemon-species?limit=898')
       .pipe(
         catchError(this.errorHandler)
       )
   }
 
-
+  getOnePokemon(name: string): Observable<Pokemon> {
+    return this.httpClient.get<Pokemon>(`${this.apiURL}pokemon/${name}`)
+      .pipe(
+        catchError(this.errorHandler)
+      )
+  }
 
   find(id: number): Observable<Pokemon> {
     return this.httpClient.get<Pokemon>(this.apiURL + id)
