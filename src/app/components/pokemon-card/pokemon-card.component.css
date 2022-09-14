@@ -34,9 +34,9 @@ section::after {
     position: relative;
     width: 300px;
     height: 400px;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(13, 177, 106, 0.05);
     margin: 20px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 15px 35px rgba(142, 194, 37, 0.5);
     border-radius: 15px;
     display: flex;
     justify-content: center;
@@ -110,6 +110,6 @@ section::after {
 }
 
 .container .card .sci li a {
-    color: #fff;
+    color: rgb(121, 25, 68);
     font-size: 20px;
 }

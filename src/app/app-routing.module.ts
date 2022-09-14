@@ -1,17 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
-import { DetailsComponent } from './post/details/details.component';
-import { IndexComponent } from './post/index/index.component';
-import { StatsComponent } from './post/stats/stats.component';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { PokemonDetailsComponent } from './pages/pokemon-details/pokemon-details.component';
+import { PokemonListComponent } from './pages/pokemon-list/pokemon-list.component';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('../app/post/details/details.module').then(m => m.DetailsModule)
+    component: PokemonListComponent,
   },
-  { path: 'view/:name', component: IndexComponent },
-  { path: 'post/:pokemonId/stats', component: StatsComponent },
+  { path: 'view/:name', component: PokemonDetailsComponent },
 
 ];
 
@@ -19,5 +17,7 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+
 })
 export class AppRoutingModule { }

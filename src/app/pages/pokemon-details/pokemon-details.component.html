@@ -1,0 +1,8 @@
+<div>
+    <div *ngIf="pokemonDetail" class="container">
+        <app-pokemon-card class="cardPokemon" [pokemon]="pokemonDetail"></app-pokemon-card>
+    </div>
+    <div *ngIf="!pokemonDetail" class="container">
+        <div>Loading</div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<div>
+    <h1>Pokemons</h1>
+
+    <table class="table table-bordered">
+        <tr>
+            <th>Name</th>
+            <th>Action</th>
+        </tr>
+        <tr class="container" *ngFor="let pokemon of pokemons;  let i=index">
+
+            <div>
+                <td>{{pokemon.name.charAt(0).toUpperCase()+pokemon.name.slice(1)}}</td>
+                <td>
+                    <a [routerLink]=" ['/view/', pokemon.name]"> View details</a>
+                </td>
+            </div>
+
+        </tr>
+    </table>
+</div>

@@ -6,17 +6,19 @@ import { MatSliderModule } from '@angular/material/slider';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { IndexComponent } from './post/index/index.component';
-import { DetailsComponent } from './post/details/details.component';
-import { StatsComponent } from './post/stats/stats.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { PokemonListComponent } from './pages/pokemon-list/pokemon-list.component';
+import { PokemonDetailsComponent } from './pages/pokemon-details/pokemon-details.component';
+import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
-    IndexComponent,
-    StatsComponent
+    PokemonListComponent,
+    PokemonDetailsComponent,
+    PokemonCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,7 +26,8 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     HttpClientModule,
     MatSliderModule,
     MatProgressSpinnerModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    RouterModule
 
   ],
   providers: [],
