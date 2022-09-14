@@ -1,30 +1,15 @@
-<div class="container">
+<div infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" (scrolled)="onScroll()">
     <h1>Pokemons</h1>
-
-    <a href="#" routerLink="" class="btn btn-success">Pokemons</a>
 
     <table class="table table-bordered">
         <tr>
             <th>Name</th>
-            <th>Url</th>
-            <th width="220px">Action</th>
+            <th>Action</th>
         </tr>
-        <tr *ngFor="let pokemon of pokemons">
-            <td>{{ pokemon.name }}</td>
-            <td>{{ pokemon.url }}</td>
-            <td>{{ pokemon.url.slice(34)}}</td>
-            /*<td>{{pokemon.url.slice(34, pokemon.url.lastIndexOf("/"))}}</td>*/
-
+        <tr class="container" *ngFor="let pokemon of pokemons">
+            <td>{{pokemon.name.charAt(0).toUpperCase()+pokemon.name.slice(1)}}</td>
             <td>
-                <div>
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon.id}}.png"
-                        class="img-fluid" alt="...">
-                </div>
-            </td>
-            <td>
-                <a [routerLink]="['/pokemon/',202]"> Details</a>
-                <a [routerLink]="['/view/', pokemon.name]"> View</a>
-
+                <a [routerLink]=" ['/view/', pokemon.name]"> View details</a>
             </td>
         </tr>
     </table>

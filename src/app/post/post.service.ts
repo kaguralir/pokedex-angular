@@ -22,13 +22,13 @@ export class PostService {
   constructor(private httpClient: HttpClient) { }
 
   getAll(): Observable<Pokemon[]> {
-    return this.httpClient.get<Pokemon[]>(this.apiURL + 'pokemon/?offset=0&limit=898')
+    return this.httpClient.get<Pokemon[]>(this.apiURL + 'pokemon/?offset=0&limit=1118')
       .pipe(
         catchError(this.errorHandler)
       )
   }
   getPokemonDetails(): Observable<Pokemon[]> {
-    return this.httpClient.get<Pokemon[]>(this.apiURL + 'pokemon-species?limit=898')
+    return this.httpClient.get<Pokemon[]>(this.apiURL + 'pokemon-species?limit=1118')
       .pipe(
         catchError(this.errorHandler)
       )

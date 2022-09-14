@@ -73,8 +73,8 @@ section::after {
     object-fit: cover;
 }
 
-.container .card .content .contentBx h3 {
-    color: #fff;
+.container .card .content .contentBx p {
+    color: rgb(0, 0, 0);
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 500;

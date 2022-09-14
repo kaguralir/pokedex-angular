@@ -6,11 +6,31 @@ import { PostService } from '../post.service';
 @Component({
   selector: 'app-root',
   templateUrl: './details.component.html',
-  styleUrls: ['./details.component.css']
+  styleUrls: ['./details.component.css'],
+  template: `
+  <div
+  class="search-results"
+      infiniteScroll
+      [infiniteScrollDistance]="2"
+      [infiniteScrollThrottle]="50"
+      [scrollWindow]="false"
+      (scrolled)="onScrollDown()"
+      (scrolledUp)="onScrollUp()"
+  ></div>
+`,
 })
 
 export class DetailsComponent implements OnInit {
+  onScroll() {
+    console.log("scrolled!!");
+  }
+  onScrollDown() {
+    console.log('scrolled down!!');
+  }
 
+  onScrollUp() {
+    console.log('scrolled up!!');
+  }
   pokemons: Pokemon[] = [];
 
   /*------------------------------------------

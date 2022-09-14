@@ -22,6 +22,8 @@ export class IndexComponent implements OnInit {
 
     this.postService.getOnePokemon(this.pokéName).subscribe((data: any) => {
       this.pokemonDetail = data;
+      this.pokemonDetail.name.charAt(0).toUpperCase();
+
       console.log(this.pokemonDetail);
     })
 

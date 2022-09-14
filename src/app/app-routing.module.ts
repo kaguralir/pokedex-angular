@@ -6,7 +6,10 @@ import { IndexComponent } from './post/index/index.component';
 import { StatsComponent } from './post/stats/stats.component';
 
 const routes: Routes = [
-  { path: '', component: DetailsComponent },
+  {
+    path: '',
+    loadChildren: () => import('../app/post/details/details.module').then(m => m.DetailsModule)
+  },
   { path: 'view/:name', component: IndexComponent },
   { path: 'post/:pokemonId/stats', component: StatsComponent },
 
