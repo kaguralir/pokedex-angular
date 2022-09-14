@@ -12,6 +12,7 @@ import { PokemonListComponent } from './pages/pokemon-list/pokemon-list.componen
 import { PokemonDetailsComponent } from './pages/pokemon-details/pokemon-details.component';
 import { PokemonCardComponent } from './components/pokemon-card/pokemon-card.component';
 import { RouterModule } from '@angular/router';
+import { PokemonDetailsWithResolverComponent } from './pages/pokemon-details-with-resolver/pokemon-details-with-resolver.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { RouterModule } from '@angular/router';
     PokemonListComponent,
     PokemonDetailsComponent,
     PokemonCardComponent,
+    PokemonDetailsWithResolverComponent,
   ],
   imports: [
     BrowserModule,

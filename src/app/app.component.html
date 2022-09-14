@@ -1,6 +1,5 @@
-<div></div> // this is my header
-<div *ngIf="showLoadingIndicator" class="loading">Loading</div>
-<mat-spinner *ngIf="showLoadingIndicator" class="loading"></mat-spinner>
-
 <router-outlet></router-outlet>
-<div></div> //this is my footer
+
+<div *ngIf="showLoadingIndicator" class="loading">
+    <mat-spinner *ngIf="showLoadingIndicator"></mat-spinner>
+</div>

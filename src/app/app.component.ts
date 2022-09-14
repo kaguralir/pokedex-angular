@@ -15,9 +15,6 @@ import {
 })
 export class AppComponent implements OnInit {
   public showLoadingIndicator: boolean = true;
-
-  pokemons: Pokemon[] = [];
-
   /*------------------------------------------
   --------------------------------------------
   Created constructor
@@ -26,7 +23,6 @@ export class AppComponent implements OnInit {
   constructor(public postService: PostService, private _router: Router) {
     this._router.events.subscribe((routerEvent: Event) => {
       if (routerEvent instanceof NavigationStart) {
-        console.log("YOU ARE HERE");
         this.showLoadingIndicator = true;
       }
 
@@ -45,10 +41,7 @@ export class AppComponent implements OnInit {
    * @return response()
    */
   ngOnInit(): void {
-    this.postService.getAll().subscribe((data: any) => {
-      this.pokemons = data.results;
-      console.log(this.pokemons);
-    })
+
 
   }
 
