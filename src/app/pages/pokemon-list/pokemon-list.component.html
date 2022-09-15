@@ -1,35 +1,13 @@
-<mat-paginator (page)="pageEvent = $event" [length]="limit" [pageSize]="pageSize" aria-label="Select page">
+<mat-paginator (page)="loadPage($event)" [length]="length" [pageSizeOptions]="pageSizeOptions" [pageSize]="pageSize" aria-label="Select page">
 </mat-paginator>
 <div>
+    <h1>Pokedex</h1>
+    <div mat-subheader>Pokemons List</div>
+    <mat-list role="list">
+      <mat-list-item  *ngFor="let pokemon of listOfPokemons;  let i=index" role="listitem">
+        <mat-icon [routerLink]=" ['/view/', pokemon.name]"  mat-list-icon>note</mat-icon>
+        <div mat-line>  {{pokemon.name.charAt(0).toUpperCase()+pokemon.name.slice(1)}} </div>
 
-    <div *ngIf="pageEvent">
-        <h5>Page Change Event Properties</h5>
-        <div>List length: {{pageEvent.length}}</div>
-        <div>Page size: {{pageEvent.pageSize}}</div>
-        <div>Page index: {{pageEvent.pageIndex}}</div>
-        <div>Page index: {{pageEvent}}</div>
-
-    </div>
-    <h1>Pokemons</h1>
-
-    <table class="table table-bordered">
-        <tr>
-            <th>Name</th>
-            <th>Action</th>
-        </tr>
-        <tr class="container" *ngFor="let pokemon of listOfPokemons;  let i=index">
-
-            <div>
-                <td>{{pokemon.name.charAt(0).toUpperCase()+pokemon.name.slice(1)}}</td>
-                <td>
-                    <a [routerLink]=" ['/view/', pokemon.name]"> View details</a>
-                </td>
-                <td>
-                    <a [routerLink]=" ['/view-resolver/', pokemon.name]"> View resolver page</a>
-                </td>
-            </div>
-
-        </tr>
-    </table>
-
+      </mat-list-item>
+    </mat-list>
 </div>

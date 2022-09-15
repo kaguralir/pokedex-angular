@@ -15,6 +15,11 @@ import { RouterModule } from '@angular/router';
 import { PokemonDetailsWithResolverComponent } from './pages/pokemon-details-with-resolver/pokemon-details-with-resolver.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import {MatListModule} from '@angular/material/list';
+import {MatIconModule} from '@angular/material/icon';
+import { FooterComponent } from './components/footer/footer.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -23,6 +28,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PokemonDetailsComponent,
     PokemonCardComponent,
     PokemonDetailsWithResolverComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +39,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     InfiniteScrollModule,
     RouterModule,
     MatPaginatorModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatListModule,
+    MatIconModule,
+    MatToolbarModule
 
   ],
   providers: [],
