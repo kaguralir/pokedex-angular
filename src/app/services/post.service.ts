@@ -5,6 +5,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 import { Pokemon } from './models/pokemon_model';
+import { ListOfPokemons } from './models/list_of_pokemons.model';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +28,13 @@ export class PostService {
         catchError(this.errorHandler)
       )
   }
+
+  getAllbyOffset(offset?: number, limit?: number): Observable<ListOfPokemons[]> {
+    return this.httpClient.get<ListOfPokemons[]>(this.apiURL + `pokemon/?offset=${offset}&limit=${limit}`)
+      .pipe(
+        catchError(this.errorHandler)
+      )
+  }//limit is amount total offset is beginning
   getPokemonDetails(): Observable<Pokemon[]> {
     return this.httpClient.get<Pokemon[]>(this.apiURL + 'pokemon-species?limit=1118')
       .pipe(
