@@ -6,6 +6,7 @@ import {
   Router, NavigationStart, NavigationEnd, Event, NavigationCancel,
   NavigationError
 } from "@angular/router";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @Component({
