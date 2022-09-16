@@ -20,6 +20,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import { FooterComponent } from './components/footer/footer.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatButtonModule,
     MatListModule,
     MatIconModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatCardModule
 
   ],
   providers: [],

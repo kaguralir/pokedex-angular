@@ -1,4 +1,5 @@
 import { Ability } from "./ability_model";
+import { PokemonStats } from "./pokemonStats/pokemon_stats.model";
 import { PokemonSpecie } from "./pokemon_specie_model";
 import { PokemonSprite } from "./pokemon_sprites_model";
 
@@ -18,7 +19,7 @@ export interface Pokemon {
     past_types: [];
     species: PokemonSpecie;
     sprites: PokemonSprite;
-    stats: [];
+    stats: PokemonStats[];
     types: [];
     weight: number;
 }
