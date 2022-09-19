@@ -14,24 +14,33 @@
     </mat-card-content>
     <mat-card-content *ngIf="cardPage == 2">
       <div *ngFor="let stat of pokemon?.stats">
-        <p>
-          Name
+        <h3>
           {{ stat.stat.name.charAt(0).toUpperCase() + stat.stat.name.slice(1) }}
-          Base {{ stat.base_stat }} Effort {{ stat.effort }}
-        </p>
+        </h3>
+        <p>Base : {{ stat.base_stat }}</p>
+        <p>Effort : {{ stat.effort }}</p>
       </div>
     </mat-card-content>
     <mat-card-content *ngIf="cardPage == 3">
+      <p>Abilities :</p>
+
       <div *ngFor="let abilityList of pokemon?.abilities">
         <div *ngFor="let item of abilityList?.ability | keyvalue">
           <ng-container *ngIf="item.key == 'name'">
-            <span>{{ item.value.toString().toUpperCase() }}</span>
+            <p>
+              {{
+                item.value.toString().charAt(0).toUpperCase() +
+                  item.value.toString().slice(1)
+              }}
+            </p>
           </ng-container>
         </div>
       </div>
+      <p>Height : {{ pokemon?.height }}</p>
+      <p>Base XP : {{ pokemon?.base_experience }}</p>
     </mat-card-content>
     <mat-card-actions>
-      <p>{{ cardPage }}</p>
+      <p>Page n°: {{ cardPage }}</p>
     </mat-card-actions>
     <div class="cardButtonsRow">
       <div *ngFor="let button of cardButtons">
