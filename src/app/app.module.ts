@@ -16,10 +16,12 @@ import { PokemonDetailsWithResolverComponent } from './pages/pokemon-details-wit
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
-import {MatListModule} from '@angular/material/list';
-import {MatIconModule} from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
 import { FooterComponent } from './components/footer/footer.component';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     PokemonCardComponent,
     PokemonDetailsWithResolverComponent,
     FooterComponent,
+    SearchBarComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatButtonModule,
     MatListModule,
     MatIconModule,
-    MatToolbarModule
+    MatToolbarModule,
+    FormsModule
 
   ],
   providers: [],

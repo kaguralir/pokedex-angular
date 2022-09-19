@@ -19,6 +19,12 @@ export class PokemonListComponent implements OnInit {
   pageEvent?: PageEvent;
   pageSizeOptions: number[] = [20, 30, 100, 200];
 
+
+
+  filteredPokemons?: Pokemon[] = [];
+  filterBy!: string;
+
+
   @ViewChild(MatPaginator) paginator?: MatPaginator;
 
   constructor(public postService: PostService,) { }
@@ -35,16 +41,20 @@ export class PokemonListComponent implements OnInit {
     this.loadPokemonPage();
   }
 
-
   loadPokemonPage() {
-    console.log("loadPkmnPageStart - listLength", this.listOfPokemons.length)
     this.listOfPokemons = []
+
     this.postService.getAllbyOffset(0, this.pageSize).subscribe((data: any) => {
       this.listOfPokemons = data.results;
       this.length = data.count;
     })
+  }
 
-    console.log(this.listOfPokemons);
-    console.log("loadPkmnPageEnd - listLength", this.listOfPokemons.length)
+
+
+  filter() {
+
+
+    return this.filteredPokemons = [...this.listOfPokemons.filter(pokemon => pokemon.name.includes(this.filterBy))];
   }
 }
