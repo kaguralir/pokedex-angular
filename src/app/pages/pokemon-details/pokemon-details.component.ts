@@ -15,15 +15,11 @@ export class PokemonDetailsComponent implements OnInit {
 
 
   ngOnInit(): void {
-    console.log("'Work", this.route.snapshot.params['name'],);
-
     this.pokeName = this.route.snapshot.params['name'];
 
     this.postService.getOnePokemon(this.pokeName).subscribe((data: any) => {
       this.pokemonDetail = data;
       this.pokemonDetail?.name.charAt(0).toUpperCase();
-
-      console.log(this.pokemonDetail);
     })
 
   }

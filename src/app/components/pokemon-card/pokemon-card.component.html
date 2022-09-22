@@ -1,15 +1,52 @@
-<div>
-    <div class="container">
-        <div class="card">
-            <div class="content">
-                <div class="contentBx">
-                    <div class="imgBx">
-                        <img src={{pokemon?.sprites?.front_default}}>
-                    </div>
-                    <p>{{pokemon?.name}}<br><span>Informations</span>
-                    </p>
-                </div>
-            </div>
-        </div>
+<div class="pokemonCard-container">
+  <mat-card class="pokemon-card">
+    <mat-card-header>
+      <mat-card-title>
+        {{ pokemon!.name | firstLetterUpperCase }}
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content *ngIf="cardPage == 1">
+      <img
+        mat-card-image
+        src="{{ pokemon?.sprites?.front_default }}"
+        alt="Photo of a pokemon"
+      />
+    </mat-card-content>
+    <mat-card-content *ngIf="cardPage == 2">
+      <div *ngFor="let stat of pokemon?.stats">
+        <h3>
+          {{ stat.stat.name | firstLetterUpperCase }}
+        </h3>
+        <p>Base : {{ stat.base_stat }}</p>
+        <p>Effort : {{ stat.effort }}</p>
+      </div>
+    </mat-card-content>
+    <mat-card-content *ngIf="cardPage == 3">
+      <p>Abilities :</p>
+
+      <div *ngFor="let abilityList of pokemon?.abilities">
+        <p>
+          {{ abilityList.ability.name | firstLetterUpperCase }}
+        </p>
+      </div>
+      <p>Height : {{ pokemon?.height }}</p>
+      <p>Base XP : {{ pokemon?.base_experience }}</p>
+      <p>Type :</p>
+      <div *ngFor="let typeList of pokemon?.types">
+        <p>
+          {{ typeList.type.name | firstLetterUpperCase }}
+        </p>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <p>Page n°: {{ cardPage }}</p>
+    </mat-card-actions>
+    <div class="cardButtonsRow">
+      <div *ngFor="let button of cardButtons">
+        <button mat-button (click)="changeCardPage(button.id)">
+          <mat-icon>{{ button.iconName }}</mat-icon>
+        </button>
+      </div>
     </div>
+  </mat-card>
 </div>

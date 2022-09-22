@@ -20,6 +20,9 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { FooterComponent } from './components/footer/footer.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
+import { FirstLetterUpperCasePipe } from './pipes/first-letter-upper-case-pipe/first-letter-upper-case-pipe.component';
+import { FilterPipe } from './pipes/filter-pipe/filter-pipe.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { FormsModule } from '@angular/forms';
 import { MenuComponent } from './components/menu/menu.component';
@@ -32,6 +35,12 @@ import { MenuComponent } from './components/menu/menu.component';
     PokemonCardComponent,
     PokemonDetailsWithResolverComponent,
     FooterComponent,
+    FirstLetterUpperCasePipe,
+    FilterPipe,
+  ],
+  exports: [
+    FirstLetterUpperCasePipe,
+    FilterPipe,
     SearchBarComponent,
     MenuComponent,
   ],
@@ -49,6 +58,7 @@ import { MenuComponent } from './components/menu/menu.component';
     MatListModule,
     MatIconModule,
     MatToolbarModule,
+    MatCardModule,
     FormsModule
 
   ],
