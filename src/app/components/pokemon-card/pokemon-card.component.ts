@@ -19,12 +19,15 @@ export class PokemonCardComponent implements OnInit {
   cardPage = 1;
   cardButtons =
     [
-      { id: 0, iconName: 'image', click: () => this.cardPage = 1 },
-      { id: 1, iconName: 'query_stats', click: () => this.cardPage = 2 },
-      { id: 2, iconName: 'info_outline', click: () => this.cardPage = 3 }
+      { id: 1, iconName: 'image' },
+      { id: 2, iconName: 'query_stats' },
+      { id: 3, iconName: 'info_outline' }
     ];
 
-
+  changeCardPage(number: number) {
+    console.log("clicked", number);
+    this.cardPage = number;
+  }
   constructor() {
 
   }

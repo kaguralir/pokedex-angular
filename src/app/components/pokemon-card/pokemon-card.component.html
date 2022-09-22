@@ -43,7 +43,7 @@
     </mat-card-actions>
     <div class="cardButtonsRow">
       <div *ngFor="let button of cardButtons">
-        <button mat-button (click)="button.click()">
+        <button mat-button (click)="changeCardPage(button.id)">
           <mat-icon>{{ button.iconName }}</mat-icon>
         </button>
       </div>
