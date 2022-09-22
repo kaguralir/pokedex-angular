@@ -16,11 +16,12 @@ import { PokemonDetailsWithResolverComponent } from './pages/pokemon-details-wit
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
-import {MatListModule} from '@angular/material/list';
-import {MatIconModule} from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
 import { FooterComponent } from './components/footer/footer.component';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatCardModule} from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
+import { FirstLetterUpperCasePipe } from './pipes/first-letter-upper-case-pipe/first-letter-upper-case-pipe.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,10 @@ import {MatCardModule} from '@angular/material/card';
     PokemonCardComponent,
     PokemonDetailsWithResolverComponent,
     FooterComponent,
+    FirstLetterUpperCasePipe,
+  ],
+  exports: [
+    FirstLetterUpperCasePipe
   ],
   imports: [
     BrowserModule,

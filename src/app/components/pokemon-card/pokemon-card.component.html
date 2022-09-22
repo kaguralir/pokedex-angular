@@ -2,7 +2,7 @@
   <mat-card class="pokemon-card">
     <mat-card-header>
       <mat-card-title>
-        {{ pokemon!.name.charAt(0).toUpperCase() + pokemon!.name.slice(1) }}
+        {{ pokemon!.name | firstLetterUpperCase }}
       </mat-card-title>
     </mat-card-header>
     <mat-card-content *ngIf="cardPage == 1">
@@ -15,7 +15,7 @@
     <mat-card-content *ngIf="cardPage == 2">
       <div *ngFor="let stat of pokemon?.stats">
         <h3>
-          {{ stat.stat.name.charAt(0).toUpperCase() + stat.stat.name.slice(1) }}
+          {{ stat.stat.name | firstLetterUpperCase }}
         </h3>
         <p>Base : {{ stat.base_stat }}</p>
         <p>Effort : {{ stat.effort }}</p>
@@ -26,7 +26,7 @@
 
       <div *ngFor="let abilityList of pokemon?.abilities">
         <p>
-          {{ abilityList.ability.name }}
+          {{ abilityList.ability.name | firstLetterUpperCase }}
         </p>
       </div>
       <p>Height : {{ pokemon?.height }}</p>
@@ -34,7 +34,7 @@
       <p>Type :</p>
       <div *ngFor="let typeList of pokemon?.types">
         <p>
-          {{ typeList.type.name }}
+          {{ typeList.type.name | firstLetterUpperCase }}
         </p>
       </div>
     </mat-card-content>
