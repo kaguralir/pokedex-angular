@@ -22,6 +22,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { FormsModule } from '@angular/forms';
+import { MenuComponent } from './components/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { FormsModule } from '@angular/forms';
     PokemonDetailsWithResolverComponent,
     FooterComponent,
     SearchBarComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,

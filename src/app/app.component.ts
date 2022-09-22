@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
 import { PostService } from './services/post.service';
-import { Pokemon } from './services/models/pokemon_model';
 import { OnInit } from '@angular/core';
 import {
   Router, NavigationStart, NavigationEnd, Event, NavigationCancel,
   NavigationError
 } from "@angular/router";
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @Component({
