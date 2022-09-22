@@ -1,13 +1,44 @@
-<mat-paginator (page)="loadPage($event)" [length]="length" [pageSizeOptions]="pageSizeOptions" [pageSize]="pageSize" aria-label="Select page">
+<mat-paginator
+  (page)="loadPage($event)"
+  [length]="length"
+  [pageSizeOptions]="pageSizeOptions"
+  [pageSize]="pageSize"
+  aria-label="Select page"
+>
 </mat-paginator>
 <div>
-    <h1>Pokedex</h1>
-    <div mat-subheader>Pokemons List</div>
-    <mat-list role="list">
-      <mat-list-item  *ngFor="let pokemon of listOfPokemons;  let i=index" role="listitem">
-        <mat-icon [routerLink]=" ['/view/', pokemon.name]"  mat-list-icon>note</mat-icon>
-        <div mat-line>  {{pokemon.name.charAt(0).toUpperCase()+pokemon.name.slice(1)}} </div>
-
-      </mat-list-item>
-    </mat-list>
+  <h1>Pokedex</h1>
+  <div mat-subheader>Pokemons List</div>
+  <input
+    type="text"
+    [(ngModel)]="filterBy"
+    placeholder="Search pokemon"
+    (keyup)="filter()"
+  />
+  <mat-list role="list" *ngIf="!filterBy">
+    <mat-list-item
+      *ngFor="let pokemon of listOfPokemons; let i = index"
+      role="listitem"
+    >
+      <mat-icon [routerLink]="['/view/', pokemon.name]" mat-list-icon
+        >note</mat-icon
+      >
+      <div mat-line>
+        {{ pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) }}
+      </div>
+    </mat-list-item>
+  </mat-list>
+  <mat-list role="list">
+    <mat-list-item
+      *ngFor="let pokemon of filteredPokemons; let i = index"
+      role="listitem"
+    >
+      <mat-icon [routerLink]="['/view/', pokemon.name]" mat-list-icon
+        >note</mat-icon
+      >
+      <div mat-line>
+        {{ pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) }}
+      </div>
+    </mat-list-item>
+  </mat-list>
 </div>
