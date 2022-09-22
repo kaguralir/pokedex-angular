@@ -25,7 +25,6 @@ export class PokemonCardComponent implements OnInit {
     ];
 
   changeCardPage(number: number) {
-    console.log("clicked", number);
     this.cardPage = number;
   }
   constructor() {

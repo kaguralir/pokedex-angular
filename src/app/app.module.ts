@@ -22,6 +22,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { FirstLetterUpperCasePipe } from './pipes/first-letter-upper-case-pipe/first-letter-upper-case-pipe.component';
+import { FilterPipe } from './pipes/filter-pipe/filter-pipe.component';
 
 @NgModule({
   declarations: [
@@ -32,9 +33,11 @@ import { FirstLetterUpperCasePipe } from './pipes/first-letter-upper-case-pipe/f
     PokemonDetailsWithResolverComponent,
     FooterComponent,
     FirstLetterUpperCasePipe,
+    FilterPipe,
   ],
   exports: [
-    FirstLetterUpperCasePipe
+    FirstLetterUpperCasePipe,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
