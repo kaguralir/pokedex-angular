@@ -23,6 +23,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { FirstLetterUpperCasePipe } from './pipes/first-letter-upper-case-pipe/first-letter-upper-case-pipe.component';
 import { FilterPipe } from './pipes/filter-pipe/filter-pipe.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { FormsModule } from '@angular/forms';
+import { MenuComponent } from './components/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,8 @@ import { FilterPipe } from './pipes/filter-pipe/filter-pipe.component';
   exports: [
     FirstLetterUpperCasePipe,
     FilterPipe,
+    SearchBarComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,7 +58,8 @@ import { FilterPipe } from './pipes/filter-pipe/filter-pipe.component';
     MatListModule,
     MatIconModule,
     MatToolbarModule,
-    MatCardModule
+    MatCardModule,
+    FormsModule
 
   ],
   providers: [],
