@@ -25,19 +25,18 @@
       <p>Abilities :</p>
 
       <div *ngFor="let abilityList of pokemon?.abilities">
-        <div *ngFor="let item of abilityList?.ability | keyvalue">
-          <ng-container *ngIf="item.key == 'name'">
-            <p>
-              {{
-                item.value.toString().charAt(0).toUpperCase() +
-                  item.value.toString().slice(1)
-              }}
-            </p>
-          </ng-container>
-        </div>
+        <p>
+          {{ abilityList.ability.name }}
+        </p>
       </div>
       <p>Height : {{ pokemon?.height }}</p>
       <p>Base XP : {{ pokemon?.base_experience }}</p>
+      <p>Type :</p>
+      <div *ngFor="let typeList of pokemon?.types">
+        <p>
+          {{ typeList.type.name }}
+        </p>
+      </div>
     </mat-card-content>
     <mat-card-actions>
       <p>Page n°: {{ cardPage }}</p>

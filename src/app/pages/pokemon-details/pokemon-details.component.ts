@@ -23,7 +23,7 @@ export class PokemonDetailsComponent implements OnInit {
       this.pokemonDetail = data;
       this.pokemonDetail?.name.charAt(0).toUpperCase();
 
-      console.log(this.pokemonDetail);
+      console.log("POkemon", this.pokemonDetail);
     })
 
   }

@@ -1,6 +1,6 @@
-import { Type } from "./type_model";
+import { TypeList } from "./typeList_model";
 
 export interface Types {
-  slot:number;
-  type:Type[];
-  }
+  slot: number;
+  typeList: TypeList;
+}

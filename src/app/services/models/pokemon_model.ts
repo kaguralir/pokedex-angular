@@ -1,4 +1,5 @@
 import { AbilityList } from "./pokemonDetails/abilityList_model";
+import { TypeList } from "./pokemonDetails/typeList_model";
 import { PokemonStats } from "./pokemonStats/pokemon_stats.model";
 import { PokemonSpecie } from "./pokemon_specie_model";
 import { PokemonSprite } from "./pokemon_sprites_model";
@@ -20,6 +21,6 @@ export interface Pokemon {
   species: PokemonSpecie;
   sprites: PokemonSprite;
   stats: PokemonStats[];
-  types: [];
+  types: TypeList[];
   weight: number;
 }
