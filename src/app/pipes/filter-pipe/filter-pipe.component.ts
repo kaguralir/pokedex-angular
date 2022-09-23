@@ -7,13 +7,14 @@ import { Pokemon } from 'src/app/services/models/pokemon_model';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(pokemon: Pokemon[], searchText: string): any[] {
-    if (!pokemon) return [];
-    if (!searchText) return pokemon;
+  filterBy!: string;
 
-    searchText = searchText.toLowerCase();
-    return pokemon.filter(it => {
-      return it.name.toLowerCase().includes(searchText);
-    });
+  transform(pokemons: Pokemon[] = [], filterBy: string): any[] {
+    if (!pokemons) return [];
+    if (!filterBy) return pokemons
+    console.log("Filter input", filterBy, pokemons,);
+
+    return pokemons.filter(pokemon => pokemon.name.includes(filterBy));
+
   }
 }

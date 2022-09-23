@@ -3,6 +3,7 @@ import { OnInit } from '@angular/core';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { Pokemon } from '../../services/models/pokemon_model';
 import { PostService } from '../../services/post.service';
+import { FilterPipe } from 'src/app/pipes/filter-pipe/filter-pipe.component';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -19,12 +20,7 @@ export class PokemonListComponent implements OnInit {
   pageEvent?: PageEvent;
   pageSizeOptions: number[] = [20, 30, 100, 200];
 
-
-
-  filteredPokemons?: Pokemon[] = [];
-  filterBy!: string;
-
-
+  searchText!: string;
   @ViewChild(MatPaginator) paginator?: MatPaginator;
 
   constructor(public postService: PostService,) { }
@@ -50,11 +46,4 @@ export class PokemonListComponent implements OnInit {
     })
   }
 
-
-
-  filter() {
-
-
-    return this.filteredPokemons = [...this.listOfPokemons.filter(pokemon => pokemon.name.includes(this.filterBy))];
-  }
 }

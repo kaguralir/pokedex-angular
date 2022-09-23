@@ -1,1 +1,15 @@
-<p>filter-pipe works!</p>
+<div>
+  <div class="filter-wrap">
+    <input
+      [(ngModel)]="filterBy"
+      placeholder="Filter Games"
+      class="filter-input"
+    />
+    <span
+      class="filter-clear"
+      *ngIf="filterBy.length > 0"
+      (click)="clearFilter()"
+      >X</span
+    >
+  </div>
+</div>
