@@ -37,12 +37,13 @@ import { MenuComponent } from './components/menu/menu.component';
     FooterComponent,
     FirstLetterUpperCasePipe,
     FilterPipe,
+    SearchBarComponent,
+    MenuComponent,
   ],
   exports: [
     FirstLetterUpperCasePipe,
     FilterPipe,
-    SearchBarComponent,
-    MenuComponent,
+
   ],
   imports: [
     BrowserModule,
