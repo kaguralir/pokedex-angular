@@ -7,8 +7,6 @@ import { Pokemon } from 'src/app/services/models/pokemon_model';
 })
 export class FilterPipe implements PipeTransform {
 
-  filterBy!: string;
-
   transform(pokemons: Pokemon[] = [], filterBy: string): any[] {
     if (!pokemons) return [];
     if (!filterBy) return pokemons
